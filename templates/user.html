@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="../static/style.css" rel="stylesheet">
+   <title>{{user.user_id}}</title>
+</head>
+<body class="body">
+    <header class="header">
+        <a href="../" class="h">Main Page</a>
+        <form enctype="multipart/form-data" method="post" action="/find">
+            <input type="text" name="query" required>
+            <input type="submit" name="submit">
+        </form>
+        <a href="/login_access">Login</a>
+    </header>
+    <h1>{{user.username}}</h1>
+    <h2>{{user.user_login}}</h2>
+    <h3>{{user.user_id}}</h3>
+<form method="post" action="/login/logout">
+    <input type="submit" value="logout">
+</form>
+  <form enctype="multipart/form-data" method="post" action="/api/upload_video">
+   <p>
+       <input type="text" name="name" required>
+       <input type="file" name="image" accept="image/png, image/jpeg, image/jpg" required>
+       <input type="file" name="video" accept="video/*" required>
+        <input type="submit" value="Отправить">
+   </p>
+  </form>
+</body>
+</html>

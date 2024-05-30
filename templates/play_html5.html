@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.plyr.io/3.6.8/plyr.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="../static/style.css" rel="stylesheet">
+   <title>Play video</title>
+</head>
+<body class="body">
+    <header class="header">
+        <a href="../" class="h">Main Page</a>
+        <form enctype="multipart/form-data" method="post" action="/api/upload_video">
+            <input type="text" name="query">
+            <input type="submit" name="submit">
+        </form>
+        <a href="/login_access">Login</a>
+    </header>
+<div class="plyr" style="width: 800px">
+   <video class="player__first" id="player" autoplay playsinline controls >
+      <source src="/api/get_video_s3/{{video.name}}" type="video/mp4" />
+   </video>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://cdn.plyr.io/3.6.8/plyr.js"></script>
+<script>
+   const player = new Plyr('#player');
+</script>
+</body>
+</html>
